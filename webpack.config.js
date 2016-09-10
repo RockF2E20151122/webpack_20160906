@@ -13,6 +13,12 @@ module.exports = {
         color: true,    //terminal output has color
         historyApiFallback: true,   //no jump page
         inline: true            //real time refresh
+    },
+    module: {
+        loaders: [{
+            test: /\.json$/,
+            loader: "json"
+        }]
     }
 };
 

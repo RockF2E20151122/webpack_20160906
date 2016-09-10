@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/RockF2E20151122/webpack_20160906#readme",
   "devDependencies": {
+    "json-loader": "^0.5.4",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
   }
