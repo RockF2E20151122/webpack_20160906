@@ -22,10 +22,7 @@ module.exports = {
         {//loader for babel
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-                presets: ['es2015', 'react']
-            }
+            loader: 'babel'//config inside webpack module
         }]
     }
 };
