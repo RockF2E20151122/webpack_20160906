@@ -29,7 +29,16 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel'//config inside webpack module
-        }]
+        },
+        // {//loader for css
+            // //npm install style-loader css-loader --save-dev
+        // },
+        // { test: /\.css$/, loader: "style!css" }
+            // => "style" and "css" loader is used for ".css" files
+            // Alternative syntax:
+            { test: /\.css$/, loaders: ["style", "css"] }
+        
+        ]
     }
 };
 
