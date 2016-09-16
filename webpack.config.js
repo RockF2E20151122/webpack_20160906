@@ -1,12 +1,18 @@
+var path = require("path");
+
 module.exports = {
     // devtool: 'source-map',
     // devtool: 'cheap-module-source-map',
-    devtool: 'eval-source-map',
+    // devtool: 'eval-source-map',
     // devtool: 'cheap-module-eval-source-map',
     entry: __dirname + "/app/main.js",   //the only main file
     output: {
-        path: __dirname + "/public",     //where the files output
-        filename: 'bundle.js'            //the file name of output
+        // path: __dirname + "/public",     //where the files output
+        path: path.resolve(__dirname, "public"),
+        
+        filename: 'bundle.js',           //the file name of output
+        
+        publicPath: "/assets/"
     },
     devServer: {//local server config
         contentBase: "./public",    //local server static folder
