@@ -33,10 +33,10 @@ module.exports = {
         // {//loader for css
             // //npm install style-loader css-loader --save-dev
         // },
-        // { test: /\.css$/, loader: "style!css" }
+        { test: /\.css$/, loader: "style!css?modules" }
             // => "style" and "css" loader is used for ".css" files
             // Alternative syntax:
-            { test: /\.css$/, loaders: ["style", "css"] }
+            // { test: /\.css$/, loaders: ["style", "css"] }
         
         ]
     }

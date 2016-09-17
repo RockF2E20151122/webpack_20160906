@@ -56,7 +56,7 @@
 
 	var _Greeter2 = _interopRequireDefault(_Greeter);
 
-	__webpack_require__(174);
+	__webpack_require__(178);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21455,6 +21455,10 @@
 
 	var _config2 = _interopRequireDefault(_config);
 
+	var _greeter = __webpack_require__(174);
+
+	var _greeter2 = _interopRequireDefault(_greeter);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21463,8 +21467,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //greeter.js
 
-
-	// import styles from './greeter.css';
 
 	var Greeter = function (_Component) {
 	    _inherits(Greeter, _Component);
@@ -21480,7 +21482,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: styles.root },
+	                { className: _greeter2.default.root },
 	                _config2.default.greetText
 	            );
 	        }
@@ -21515,8 +21517,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./main.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./main.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?modules!./greeter.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?modules!./greeter.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -21534,10 +21536,12 @@
 
 
 	// module
-	exports.push([module.id, "html{\r\n    box-sizing:border-box;\r\n    -ms-text-size-adjust:100%;\r\n    -webkit-text-size-adjust: 100%;\r\n}\r\n*, *:before, *:after{\r\n    box-sizing:inherit;\r\n}\r\nbody{\r\n    margin:0;\r\n    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n}\r\nh1, h2, h3, h4, h5, h6, p, ul{\r\n    margin:0;\r\n    padding:0;\r\n}\r\n\r\n\r\n", ""]);
+	exports.push([module.id, ".Nl62aGzH6r19A7VNaTKiO {\r\n    background-color: #eee;\r\n    padding: 10px;\r\n    border: 3px solid #ccc;\r\n}", ""]);
 
 	// exports
-
+	exports.locals = {
+		"root": "Nl62aGzH6r19A7VNaTKiO"
+	};
 
 /***/ },
 /* 176 */
@@ -21845,6 +21849,46 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(179);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(177)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js?modules!./main.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?modules!./main.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(176)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "html{\r\n    box-sizing:border-box;\r\n    -ms-text-size-adjust:100%;\r\n    -webkit-text-size-adjust: 100%;\r\n}\r\n*, *:before, *:after{\r\n    box-sizing:inherit;\r\n}\r\nbody{\r\n    margin:0;\r\n    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n}\r\nh1, h2, h3, h4, h5, h6, p, ul{\r\n    margin:0;\r\n    padding:0;\r\n}\r\n\r\n\r\n", ""]);
+
+	// exports
 
 
 /***/ }

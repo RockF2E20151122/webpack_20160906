@@ -2,7 +2,7 @@
 import React, {Component} from 'react'
 import config from './config.json';
 
-// import styles from './greeter.css';
+import styles from './greeter.css';
 
 class Greeter extends Component {
     render(){
