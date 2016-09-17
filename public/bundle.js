@@ -21517,8 +21517,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?modules!./greeter.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?modules!./greeter.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?modules!./../node_modules/postcss-loader/index.js!./greeter.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?modules!./../node_modules/postcss-loader/index.js!./greeter.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -21536,7 +21536,7 @@
 
 
 	// module
-	exports.push([module.id, ".Nl62aGzH6r19A7VNaTKiO {\r\n    background-color: #eee;\r\n    padding: 10px;\r\n    border: 3px solid #ccc;\r\n}", ""]);
+	exports.push([module.id, ".Nl62aGzH6r19A7VNaTKiO {\r\n    background-color: #eee;\r\n    padding: 10px;\r\n    border: 3px solid #ddd;\r\n}", ""]);
 
 	// exports
 	exports.locals = {
@@ -21867,8 +21867,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?modules!./main.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?modules!./main.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?modules!./../node_modules/postcss-loader/index.js!./main.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?modules!./../node_modules/postcss-loader/index.js!./main.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});

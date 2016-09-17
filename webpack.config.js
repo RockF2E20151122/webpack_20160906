@@ -33,13 +33,15 @@ module.exports = {
         // {//loader for css
             // //npm install style-loader css-loader --save-dev
         // },
-        { test: /\.css$/, loader: "style!css?modules" }
+        { test: /\.css$/, loader: "style!css?modules!postcss" }
             // => "style" and "css" loader is used for ".css" files
             // Alternative syntax:
             // { test: /\.css$/, loaders: ["style", "css"] }
         
         ]
-    }
+    },
+    postcss:[ require('autoprefixer') //using autoprefixer plugin
+    ]
 };
 
 //__dirname is the default param , the currently folder path
