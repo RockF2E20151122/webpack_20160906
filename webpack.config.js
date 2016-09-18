@@ -1,22 +1,22 @@
 var path = require("path");
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // devtool: 'source-map',
     // devtool: 'cheap-module-source-map',
-    // devtool: 'eval-source-map',
+    devtool: 'eval-source-map',
     // devtool: 'cheap-module-eval-source-map',
     entry: __dirname + "/app/main.js",   //the only main file
     output: {
-        // path: __dirname + "/public",     //where the files output
-        path: path.resolve(__dirname, "public"),
-        
+        path: __dirname + "/build",     //where the files output
+        // path: path.resolve(__dirname, "public"),
         filename: 'bundle.js',           //the file name of output
         
         publicPath: "/assets/"
     },
     devServer: {//local server config
-        contentBase: "./public",    //local server static folder
+        contentBase: "./build",    //local server static folder
         color: true,    //terminal output has color
         historyApiFallback: true,   //no jump page
         inline: true            //real time refresh
@@ -41,7 +41,12 @@ module.exports = {
         ]
     },
     postcss:[ require('autoprefixer')], //using autoprefixer plugin
-    plugins: [ new webpack.BannerPlugin("Copyright Flying Unicorns inc.") ]
+    plugins: [
+        new webpack.BannerPlugin("Copyright Flying Unicorns inc."),
+        new HtmlWebpackPlugin({
+            template: __dirname + '/app/index.tmpl.html'
+        })
+    ]
 };
 
 //__dirname is the default param , the currently folder path
