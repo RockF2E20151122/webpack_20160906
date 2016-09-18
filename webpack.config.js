@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // console.info(webpack);
 
 module.exports = {
@@ -52,7 +53,10 @@ module.exports = {
         // {//loader for css
             // //npm install style-loader css-loader --save-dev
         // },
-        { test: /\.css$/, loader: "style!css?modules!postcss" }
+        { 
+            test: /\.css$/, 
+            loader: ExtractTextPlugin.extract('style', 'css?modules!postcss')  
+        }
             // => "style" and "css" loader is used for ".css" files
             // Alternative syntax:
             // { test: /\.css$/, loaders: ["style", "css"] }
@@ -60,11 +64,15 @@ module.exports = {
     },
     postcss:[ require('autoprefixer')], //using autoprefixer plugin
     plugins: [
-        new webpack.BannerPlugin("Copyright Flying Unicorns inc."),
-        new HtmlWebpackPlugin({
+        new webpack.BannerPlugin("Copyright Flying Unicorns inc."), //add copyright
+        new HtmlWebpackPlugin({                                     //html template plugin
             template: __dirname + '/app/index.tmpl.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),                   //bable modules auto build
+        
+        new webpack.optimize.OccurenceOrderPlugin(),    //为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
+        new webpack.optimize.UglifyJsPlugin(),  //uglify js
+        new ExtractTextPlugin('style.css')      //devide css and js files
     ]
 };
 
