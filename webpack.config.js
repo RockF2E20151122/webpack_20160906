@@ -15,7 +15,7 @@ module.exports = {
         // path: path.resolve(__dirname, "public"),
         filename: "[name]-[hash].js",//'bundle.js',           //the file name of output
         
-        publicPath: "/assets/"
+        publicPath: "/assets/"  // http://localhost:8080/assets
     },
     devServer: {//local server config
         contentBase: "./build",    //local server static folder
