@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+console.info(webpack);
 
 module.exports = {
     // devtool: 'source-map',
@@ -20,6 +21,8 @@ module.exports = {
         color: true,    //terminal output has color
         historyApiFallback: true,   //no jump page
         inline: true            //real time refresh
+        
+        ,hot: true              //config to hot and add the "query" for babel make the react auto packaging
     },
     module: {
         loaders: [{//loader for json file
@@ -30,6 +33,21 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel'//config inside webpack module
+            ,query:{
+                //config to hot and add the "query" for babel make the react auto packaging
+                presets: [ 'es2015', 'react' ],
+                "env": {
+                    "development": {
+                        "plugins": [["react-transform", {
+                            "transforms": [{
+                                "transform": "react-transform-hmr",
+                                "imports": ["react"],
+                                "locals": ["module"]
+                            }]
+                        } ]]
+                    }
+                }
+            }
         },
         // {//loader for css
             // //npm install style-loader css-loader --save-dev
@@ -45,7 +63,8 @@ module.exports = {
         new webpack.BannerPlugin("Copyright Flying Unicorns inc."),
         new HtmlWebpackPlugin({
             template: __dirname + '/app/index.tmpl.html'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ]
 };
 
