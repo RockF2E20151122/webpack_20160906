@@ -13,7 +13,7 @@ module.exports = {
     output: {
         path: __dirname + "/build",     //where the files output
         // path: path.resolve(__dirname, "public"),
-        filename: 'bundle.js',           //the file name of output
+        filename: "[name]-[hash].js",//'bundle.js',           //the file name of output
         
         publicPath: "/assets/"
     },
@@ -72,7 +72,7 @@ module.exports = {
         
         new webpack.optimize.OccurenceOrderPlugin(),    //为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
         new webpack.optimize.UglifyJsPlugin(),  //uglify js
-        new ExtractTextPlugin('style.css')      //devide css and js files
+        new ExtractTextPlugin('[name]-[hash].css')      //devide css and js files
     ]
 };
 
