@@ -1,7 +1,7 @@
 var path = require("path");
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-console.info(webpack);
+// console.info(webpack);
 
 module.exports = {
     // devtool: 'source-map',
@@ -20,7 +20,7 @@ module.exports = {
         contentBase: "./build",    //local server static folder
         color: true,    //terminal output has color
         historyApiFallback: true,   //no jump page
-        inline: true            //real time refresh
+        inline: true            //real time refresh, already can auto refresh react modules
         
         ,hot: true              //config to hot and add the "query" for babel make the react auto packaging
     },
