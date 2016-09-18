@@ -1,4 +1,5 @@
 var path = require("path");
+var webpack = require('webpack');
 
 module.exports = {
     // devtool: 'source-map',
@@ -37,11 +38,10 @@ module.exports = {
             // => "style" and "css" loader is used for ".css" files
             // Alternative syntax:
             // { test: /\.css$/, loaders: ["style", "css"] }
-        
         ]
     },
-    postcss:[ require('autoprefixer') //using autoprefixer plugin
-    ]
+    postcss:[ require('autoprefixer')], //using autoprefixer plugin
+    plugins: [ new webpack.BannerPlugin("Copyright Flying Unicorns inc.") ]
 };
 
 //__dirname is the default param , the currently folder path
