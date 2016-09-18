@@ -21499,7 +21499,7 @@
 /***/ function(module, exports) {
 
 	module.exports = {
-		"greetText": "Hi Rock and greetings from config JSON!"
+		"greetText": "Hi there and greetings from config JSON!"
 	};
 
 /***/ },
